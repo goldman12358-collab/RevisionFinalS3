@@ -1,0 +1,557 @@
+/* ============================================
+   Takalo-Takalo — Thème Saint-Valentin
+   ============================================ */
+
+/* ---------- Variables globales ---------- */
+:root {
+    --valentine-primary: #e63946;
+    --valentine-secondary: #f4a0b1;
+    --valentine-dark: #1d1127;
+    --valentine-darker: #120b1d;
+    --valentine-light: #fff0f3;
+    --valentine-accent: #ff6b81;
+    --valentine-gold: #f7c948;
+    --valentine-gradient: linear-gradient(135deg, #e63946, #f4a0b1, #ff6b81);
+    --valentine-gradient-dark: linear-gradient(135deg, #1d1127, #2d1b3d, #1d1127);
+    --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--valentine-darker);
+    color: #f0e6f6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Navbar ---------- */
+.takalo-nav {
+    background: rgba(29, 17, 39, 0.92) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(230, 57, 70, 0.3);
+    padding: 0.6rem 0;
+    transition: all 0.3s ease;
+    z-index: 1050;
+}
+
+.takalo-nav.scrolled {
+    background: rgba(18, 11, 29, 0.98) !important;
+    box-shadow: 0 4px 30px rgba(230, 57, 70, 0.15);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--valentine-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #f0e6f6 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--valentine-gradient);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+.nav-link:hover {
+    color: var(--valentine-accent) !important;
+}
+
+.btn-valentine {
+    background: var(--valentine-gradient);
+    color: #fff !important;
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn-valentine:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(230, 57, 70, 0.5);
+    color: #fff !important;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 76px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--valentine-gradient-dark);
+    z-index: 0;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(244, 160, 177, 0.06) 0%, transparent 60%);
+    animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(2%, 1%) rotate(3deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    background: var(--valentine-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(240, 230, 246, 0.85);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-cta {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.btn-hero {
+    background: var(--valentine-gradient);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.35);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 40px rgba(230, 57, 70, 0.5);
+    color: #fff;
+}
+
+.btn-hero-outline {
+    background: transparent;
+    color: var(--valentine-secondary);
+    border: 2px solid var(--valentine-secondary);
+    border-radius: 50px;
+    padding: 0.85rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-hero-outline:hover {
+    background: rgba(244, 160, 177, 0.1);
+    color: #fff;
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ---------- Features / Comment ça marche ---------- */
+.section-features {
+    padding: 5rem 0;
+    background: var(--valentine-darker);
+    position: relative;
+}
+
+.section-features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.4), transparent);
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--valentine-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: rgba(240, 230, 246, 0.7);
+    margin-bottom: 3.5rem;
+    font-size: 1.1rem;
+}
+
+.feature-card {
+    background: rgba(45, 27, 61, 0.5);
+    border: 1px solid rgba(230, 57, 70, 0.15);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--valentine-gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(230, 57, 70, 0.35);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.12);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(230, 57, 70, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: var(--valentine-accent);
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--valentine-gradient);
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h4 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: rgba(240, 230, 246, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ---------- Catégories ---------- */
+.section-categories {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--valentine-darker), var(--valentine-dark));
+}
+
+.category-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(45, 27, 61, 0.6);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-radius: 50px;
+    padding: 0.8rem 1.6rem;
+    color: #f0e6f6;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0.4rem;
+}
+
+.category-pill:hover {
+    background: var(--valentine-gradient);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.25);
+    border-color: transparent;
+}
+
+.category-pill i {
+    font-size: 1.2rem;
+}
+
+/* ---------- CTA Section ---------- */
+.section-cta {
+    padding: 5rem 0;
+    background: var(--valentine-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(230, 57, 70, 0.06) 0%, transparent 70%);
+}
+
+.cta-card {
+    background: rgba(45, 27, 61, 0.5);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-radius: 30px;
+    padding: 4rem 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-card h2 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    color: rgba(240, 230, 246, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Stats ---------- */
+.stats-row {
+    padding: 3rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    background: var(--valentine-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: rgba(240, 230, 246, 0.6);
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+
+/* ---------- Footer ---------- */
+.takalo-footer {
+    background: rgba(18, 11, 29, 0.95);
+    border-top: 1px solid rgba(230, 57, 70, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-title {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+}
+
+.footer-desc {
+    color: rgba(240, 230, 246, 0.6);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.footer-team li {
+    color: rgba(240, 230, 246, 0.75);
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.footer-divider {
+    border-color: rgba(230, 57, 70, 0.15);
+}
+
+.footer-copy {
+    color: rgba(240, 230, 246, 0.5);
+    font-size: 0.85rem;
+}
+
+/* ---------- Floating Hearts Container ---------- */
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.heartbeat {
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.2); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.15); }
+    56% { transform: scale(1); }
+}
+
+/* Element animation class (triggered by JS) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Particles / Heart float ---------- */
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: floatHeart linear forwards;
+    color: var(--valentine-primary);
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 0.7;
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg) scale(0.3);
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 70px;
+    }
+    .hero-content {
+        padding: 1rem;
+    }
+    .cta-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .feature-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-text {
+        font-size: 1.2rem;
+    }
+    .btn-hero, .btn-hero-outline {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.8rem;
+    }
+}

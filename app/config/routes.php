@@ -1,20 +1,32 @@
 <?php
-// Minimal routes file: redirect requests to the single index page
-// If the Flight framework is available, register the route there.
-// Route GET / to the single view `app/views/index.php`
+/**
+ * Routes — Takalo-Takalo
+ * Utilise page.php comme layout principal avec chargement dynamique du contenu.
+ */
+
 if (class_exists('Flight')) {
-    Flight::route('GET /', function() {
-        require __DIR__ . '/../views/index.php';
+
+    // Page d'accueil
+    Flight::route('GET /', function () {
+        $titre = 'home';
+        require __DIR__ . '/../views/page.php';
     });
+
+    // Ajoutez d'autres routes ici plus tard :
+    // Flight::route('GET /login', function () {
+    //     $titre = 'login';
+    //     require __DIR__ . '/../views/page.php';
+    // });
+
 } else {
-    // If called directly (no Flight), serve the view when URI is root
+    // Fallback sans Flight
     if (isset($_SERVER['REQUEST_URI'])) {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         if ($uri === '/' || $uri === '/index.php') {
-            require __DIR__ . '/../views/index.php';
+            $titre = 'home';
+            require __DIR__ . '/../views/page.php';
             exit;
         } else {
-            // redirect other requests to root
             header('Location: /', true, 302);
             exit;
         }

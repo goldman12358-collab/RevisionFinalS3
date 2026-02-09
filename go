@@ -29,3 +29,5 @@ Notre boostrap est dans public , on n'utilise jamais le lien cdn pour boostrap ,
 creer des dossier pour mettre des JS et CSS dans public pour une meilleure organisation
 Implementer bien une page d'accueil cool et stylée pour attirer les utilisateurs, avec des animations légères en JavaScript pour rendre l'expérience utilisateur plus agréable. Assurez-vous que le site est responsive et fonctionne bien sur tous les appareils.
 Telecharger des images ppur la pages d'acceuil si necessaire pour plus de style et d'attrait visuel, en veillant à ce qu'elles soient libres de droits ou que vous ayez la permission de les utiliser. Vous pouvez trouver des images gratuites sur des sites comme Unsplash, Pexels ou Pixabay. Utilisez ces images pour créer une page d'accueil attrayante qui incite les utilisateurs à s'inscrire et à commencer à échanger leurs objets sur Takalo-Takalo.
+
+On reste là pour le moment ...
