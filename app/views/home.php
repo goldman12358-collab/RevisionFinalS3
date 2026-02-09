@@ -13,7 +13,7 @@
             Vêtements, livres, DVD et bien plus — échangez librement avec notre communauté.
         </p>
         <div class="hero-cta d-flex flex-wrap justify-content-center gap-3">
-            <a href="#" class="btn-hero">
+            <a href="/login" class="btn-hero">
                 <i class="bi bi-rocket-takeoff me-2"></i>Commencer maintenant
             </a>
             <a href="#comment-ca-marche" class="btn-hero-outline">
@@ -158,7 +158,7 @@
         <div class="cta-card animate-on-scroll">
             <h2><i class="bi bi-heart-fill text-danger me-2 heartbeat"></i>Prêt à échanger ?</h2>
             <p>Rejoignez des centaines d'utilisateurs qui échangent déjà leurs objets sur Takalo-Takalo.</p>
-            <a href="#" class="btn-hero">
+            <a href="/inscription" class="btn-hero">
                 <i class="bi bi-box-arrow-in-right me-2"></i>Créer mon compte gratuit
             </a>
         </div>

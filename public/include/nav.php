@@ -17,7 +17,12 @@ $nonce = Flight::get('csp_nonce') ?? '';
                     <a class="nav-link active" href="/"><i class="bi bi-house-heart me-1"></i>Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-valentine ms-lg-3" href="#">
+                    <a class="nav-link" href="/inscription">
+                        <i class="bi bi-pencil-square me-1"></i>S'inscrire
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-valentine ms-lg-3" href="/login">
                         <i class="bi bi-box-arrow-in-right me-1"></i>Se connecter
                     </a>
                 </li>

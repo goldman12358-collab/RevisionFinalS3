@@ -29,6 +29,8 @@ $viewsPath  = __DIR__;
     <link rel="stylesheet" href="/bootstrap/icons/bootstrap-icons.min.css">
     <!-- Custom Valentine CSS -->
     <link rel="stylesheet" href="/assets/css/valentine.css">
+    <!-- Auth CSS -->
+    <link rel="stylesheet" href="/assets/css/auth.css">
 </head>
 <body>
 
@@ -40,17 +42,16 @@ $viewsPath  = __DIR__;
         <?php
         // Chargement dynamique du contenu selon le titre
         switch ($titre) {
+            case 'login':
+                require $viewsPath . $ds . 'login.php';
+                break;
+            case 'inscription':
+                require $viewsPath . $ds . 'inscription.php';
+                break;
             case 'home':
             default:
                 require $viewsPath . $ds . 'home.php';
                 break;
-            // Ajoutez d'autres cas ici plus tard :
-            // case 'login':
-            //     require $viewsPath . $ds . 'login.php';
-            //     break;
-            // case 'objets':
-            //     require $viewsPath . $ds . 'objets.php';
-            //     break;
         }
         ?>
     </main>
@@ -62,5 +63,7 @@ $viewsPath  = __DIR__;
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Custom Valentine JS (defer = non-bloquant) -->
     <script src="/assets/js/valentine.js" defer></script>
+    <!-- Auth JS (defer = non-bloquant) -->
+    <script src="/assets/js/auth.js" defer></script>
 </body>
 </html>

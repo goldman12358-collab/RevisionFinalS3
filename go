@@ -31,3 +31,7 @@ Implementer bien une page d'accueil cool et stylée pour attirer les utilisateur
 Telecharger des images ppur la pages d'acceuil si necessaire pour plus de style et d'attrait visuel, en veillant à ce qu'elles soient libres de droits ou que vous ayez la permission de les utiliser. Vous pouvez trouver des images gratuites sur des sites comme Unsplash, Pexels ou Pixabay. Utilisez ces images pour créer une page d'accueil attrayante qui incite les utilisateurs à s'inscrire et à commencer à échanger leurs objets sur Takalo-Takalo.
 
 On reste là pour le moment ...
+
+Implementer un login et inscription coherent avec notre theme , adapter les route pour les liens suivant dans la page d'acceuil : 
+se connecter , creer compte , commencer maintenant (vers login) 
+pas encore de logique back pour le login et inscription (boutton submit pas encore fonctionnel)

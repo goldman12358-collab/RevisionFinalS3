@@ -1,0 +1,365 @@
+/* ============================================
+   Takalo-Takalo — Auth Pages (Login / Inscription)
+   Thème Saint-Valentin
+   ============================================ */
+
+/* ---------- Auth Section Background ---------- */
+.auth-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 76px;
+}
+
+.auth-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--valentine-gradient-dark);
+    z-index: 0;
+}
+
+.auth-bg::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background:
+        radial-gradient(ellipse at 20% 40%, rgba(230, 57, 70, 0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 60%, rgba(244, 160, 177, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 80%, rgba(255, 107, 129, 0.06) 0%, transparent 50%);
+    animation: authGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes authGlow {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(1%, -1%) rotate(2deg); }
+}
+
+/* ---------- Auth Card ---------- */
+.auth-card {
+    background: rgba(35, 20, 55, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(230, 57, 70, 0.05);
+    transition: all 0.4s ease;
+}
+
+.auth-card:hover {
+    border-color: rgba(230, 57, 70, 0.35);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(230, 57, 70, 0.08);
+}
+
+/* ---------- Auth Header ---------- */
+.auth-header {
+    margin-bottom: 2rem;
+}
+
+.auth-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: var(--valentine-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-size: 1.8rem;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.35);
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(230, 57, 70, 0.35); }
+    50%      { box-shadow: 0 8px 40px rgba(230, 57, 70, 0.55); }
+}
+
+.auth-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: var(--valentine-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.4rem;
+}
+
+.auth-subtitle {
+    color: rgba(240, 230, 246, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* ---------- Auth Inputs ---------- */
+.auth-input-icon {
+    background: rgba(230, 57, 70, 0.12);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-right: none;
+    color: var(--valentine-accent);
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.auth-input {
+    background: rgba(45, 27, 61, 0.5) !important;
+    border: 1px solid rgba(230, 57, 70, 0.2) !important;
+    border-left: none !important;
+    color: #f0e6f6 !important;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.auth-input::placeholder {
+    color: rgba(240, 230, 246, 0.35);
+}
+
+.auth-input:focus {
+    background: rgba(55, 35, 75, 0.6) !important;
+    border-color: rgba(230, 57, 70, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1) !important;
+    outline: none;
+}
+
+.auth-input:focus + .auth-toggle-pw,
+.auth-input:focus ~ .auth-toggle-pw {
+    border-color: rgba(230, 57, 70, 0.5) !important;
+}
+
+.input-group:focus-within .auth-input-icon {
+    border-color: rgba(230, 57, 70, 0.5);
+    color: var(--valentine-primary);
+    background: rgba(230, 57, 70, 0.18);
+}
+
+/* Toggle password visibility button */
+.auth-toggle-pw {
+    background: rgba(45, 27, 61, 0.5);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    border-left: none;
+    color: rgba(240, 230, 246, 0.4);
+    padding: 0.7rem 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.auth-toggle-pw:hover {
+    color: var(--valentine-accent);
+    background: rgba(55, 35, 75, 0.6);
+}
+
+.auth-toggle-pw:focus {
+    box-shadow: none;
+}
+
+/* ---------- Checkbox ---------- */
+.auth-check {
+    background-color: rgba(45, 27, 61, 0.5);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    cursor: pointer;
+}
+
+.auth-check:checked {
+    background-color: var(--valentine-primary);
+    border-color: var(--valentine-primary);
+}
+
+.auth-check:focus {
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.auth-check-label {
+    color: rgba(240, 230, 246, 0.7);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* ---------- Auth Submit Button ---------- */
+.btn-auth-submit {
+    background: var(--valentine-gradient);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 25px rgba(230, 57, 70, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-auth-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-auth-submit:hover::before {
+    left: 100%;
+}
+
+.btn-auth-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(230, 57, 70, 0.45);
+    color: #fff;
+}
+
+.btn-auth-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------- Auth Divider ---------- */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.25), transparent);
+}
+
+.auth-divider span {
+    color: rgba(240, 230, 246, 0.4);
+    font-size: 0.8rem;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---------- Auth Links ---------- */
+.auth-link-small {
+    color: var(--valentine-secondary);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-link-small:hover {
+    color: var(--valentine-accent);
+    text-decoration: underline;
+}
+
+.auth-switch-text {
+    color: rgba(240, 230, 246, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.auth-switch-link {
+    color: var(--valentine-accent);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.auth-switch-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.auth-back-link {
+    color: rgba(240, 230, 246, 0.5);
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.auth-back-link:hover {
+    color: var(--valentine-secondary);
+}
+
+/* ---------- Password Strength Meter ---------- */
+.password-strength {
+    display: none;
+}
+
+.password-strength.active {
+    display: block;
+}
+
+.strength-bar {
+    height: 4px;
+    background: rgba(45, 27, 61, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.strength-fill.weak       { width: 25%;  background: #e63946; }
+.strength-fill.fair       { width: 50%;  background: #f7c948; }
+.strength-fill.good       { width: 75%;  background: #43aa8b; }
+.strength-fill.strong     { width: 100%; background: #2ec4b6; }
+
+.strength-text {
+    color: rgba(240, 230, 246, 0.5);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* ---------- Match message ---------- */
+.auth-match-msg {
+    font-size: 0.78rem;
+    margin-top: 0.3rem;
+    display: block;
+    min-height: 1.1em;
+}
+
+.auth-match-msg.match    { color: #2ec4b6; }
+.auth-match-msg.no-match { color: #e63946; }
+
+/* ---------- Auth input valid/invalid states ---------- */
+.auth-input.is-valid-custom {
+    border-color: rgba(46, 196, 182, 0.4) !important;
+}
+
+.auth-input.is-invalid-custom {
+    border-color: rgba(230, 57, 70, 0.5) !important;
+}
+
+/* ---------- Responsive Auth ---------- */
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
+    }
+
+    .auth-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 1.35rem;
+    }
+}
