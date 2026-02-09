@@ -79,7 +79,7 @@ return [
 		'driver'   => 'pgsql',           // type de base de données : pgsql pour PostgreSQL
 		'host'     => 'localhost',       // serveur PostgreSQL
 		'port'     => 5432,              // port PostgreSQL par défaut
-		'dbname'   => 'mini-template',   // nom de la base
+		'dbname'   => 'revisionFinalS3',   // nom de la base
 		'user'     => 'goldman', // utilisateur PostgreSQL
 		'password' => 'go', // mot de passe
 		'charset'  => 'utf8',            // encodage

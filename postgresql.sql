@@ -20,8 +20,3 @@ CREATE TABLE produit (
     unite VARCHAR(10) DEFAULT 'Ar'
 );
 
-INSERT INTO produit (names, price, pathimg, descriptions)
-VALUES
-('Produit 1', 1000, '/assets/images/1.jpg', 'Description bidon pour Produit 1'),
-('Produit 2', 2000, '/assets/images/2.jpg', 'Description bidon pour Produit 2'),
-('Produit 3', 3000, '/assets/images/3.jpg', 'Description bidon pour Produit 3');
