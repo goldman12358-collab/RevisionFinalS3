@@ -45,4 +45,42 @@ class Users
     {       
         $this->Userrole = $Userrole;
     }
+
+    public static function findByEmail($db, $email)
+    {
+        $stmt = $db->prepare('SELECT * FROM users WHERE email = :email');
+        $stmt->execute(['email' => $email]);
+        $data = $stmt->fetch();
+
+        if ($data) {
+            $user = new self();
+            $user->setId($data['id']);
+            $user->setFullname($data['fullname']);
+            $user->setEmail($data['email']);
+            $user->setUserrole($data['Userrole']);
+            return $user;
+        }
+        return null;
+    }
+
+    public function verifyPassword($password)
+    {
+        $db = Flight::db();
+        $stmt = $db->prepare('SELECT password FROM users WHERE id = :id');
+        $stmt->execute(['id' => $this->getId()]);
+        $data = $stmt->fetch();
+
+        if ($data) {
+            return password_verify($password, $data['password']);
+        }
+        return false;
+    }
+
+    public static function create($db, $email, $password)
+    {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $db->prepare('INSERT INTO users (email, password) VALUES (:email, :password)');
+        $stmt->execute(['email' => $email, 'password' => $hashedPassword]);
+        return self::findByEmail($db, $email);
+    }
 }
