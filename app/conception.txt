@@ -1,0 +1,51 @@
+Base de donnee PostgreSQL : 
+Tables necessaires :
+users{
+    id,
+    fullname,
+    email
+}
+comptes{
+    id,
+    idUser,
+    dateCreate,
+    motdepasse
+}
+statusObjets{
+    id,
+    libelle (en ligne, retiree)
+}
+objets{
+    id,
+    nom,
+    objetsdescription,
+    idUserProprietaire,
+    idCategorie,
+    dateMisEnligne,
+    prixEstimatif,
+    statusObjets
+}
+imagesobjets{
+    id,
+    idObjets,
+    libelle
+}
+statusEchage{
+    id,
+    libelle (acceptee,refusee,en cours,annulee)
+}
+propositionsEchange{
+    id,
+    idUserSource,
+    idUserDestinataire,
+    idObjetSource,
+    idObjetDesiree,
+    statusEchange,
+    dateProposition
+}
+echange{
+    id,
+    idProposition,
+    dateEchangeFait
+}
+

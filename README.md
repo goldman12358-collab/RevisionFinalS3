@@ -1,2 +1,44 @@
 # RevisionFinalS3
 Revision final S3 fevrier 2026 (trio)
+
+REVISION – Février 2026– P18/P5DS
+Objectifs
+On veut mettre en place un site qui permet de faire des échanges d’objet : Takalo-takalo.
+Les utilisateurs inscrits sur le site vont mettre en ligne leurs objets (vêtement, livre, DVD,
+etc…). Ils vont voir les objets des autres utilisateurs et proposer un échange entre 2 objets.
+Si l’autre utilisateur accepte, l’objet change de propriétaire
+Technique
+Base de données Mysql/Postgres
+Créer des données de test
+Utiliser FlightMvc comme framework PHP
+Mettre le nom et le num ETU des membres du projet sur le footer.
+Vous pouvez utiliser un template existant ou créer à partir de boostrap
+Délai et livraison
+A Préparer
+• Un lien pour la liste des taches
+• Un lien GIT accessible en public
+Fonctionnalités (partie 1 sur 2)
+1. Backoffice (page admin)
+a. Login admin (mettre le login par défaut sur le formulaire)
+b. Gestion des catégories
+2. Frontoffice (utilisateur)
+a. Créer une page d’inscription et de login
+b. Page pour gérer ses objets
+i. Objet : titre description, 1 ou plusieurs photos, prix estimatif
+c. Page pour voir la liste des objets des autres utilisateurs
+i. Fiche objet
+1. Proposition d’échange avec notre objet
+d. Page pour gérer les échanges avec d’autres utilisateurs
+i. Liste des propositions
+ii. Acceptation ou refus
+Fonctionnalités (partie 2 sur 2)
+1. Backoffice (page admin)
+a. Statistiques
+i. Nombre d’utilisateur inscrit
+ii. Le nombre d’échange effectué
+2. Frontoffice (utilisateur)
+a. Barre de recherche
+i. rechercher dans le titre, catégorie (zone de liste)
+b. Historique d’appartenance d’un objet (visible au public)
+i. On veut voir qui sont les différents propriétaires au fil des échanges,
+avec la date et l’heure d’échange
