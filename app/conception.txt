@@ -1,9 +1,14 @@
-Base de donnee PostgreSQL : 
+Base de donnee PostgreSQL : (nom base: revisionFinalS3)
 Tables necessaires :
+userRole{
+    id,
+    libelle (normal,admin)
+}
 users{
     id,
     fullname,
-    email
+    email,
+    Userrole
 }
 comptes{
     id,
@@ -14,6 +19,11 @@ comptes{
 statusObjets{
     id,
     libelle (en ligne, retiree)
+}
+categorieObjet{
+    id,
+    libelle,
+    descriptionCategories
 }
 objets{
     id,
@@ -28,6 +38,11 @@ objets{
 imagesobjets{
     id,
     idObjets,
+    libelle
+}
+imagesCategorieobjets{
+    id,
+    idCatObjets,
     libelle
 }
 statusEchage{
@@ -48,4 +63,20 @@ echange{
     idProposition,
     dateEchangeFait
 }
-
+============
+Preparation du fichier todo excel 10 min ( Florencia )
+============
+PSEUDO TODO :
+modifier config pour inclure la base de donnes : Flo 5 min
+creer les tables necessaires : Flo 5 min 
+inserer les donnees des tables status : Flo 2 min
+creer un models simple (Flight php) pour chaque tables , avec tous les attributs , getteur et setteur : Aina 20 min 
+Ajouter des methodes acces base pour chaque objets (getAll, getByID,save,update) : Aina 20 min 
+creer un simple page acceuil avec navbar et footer (view): Goldman 10 min 
+ajout dans route pour la page acceuil : Goldman 2 min
+ajout de btn pour se connecter : Goldman 2 min
+creer une page login : Goldman 5 min 
+creer une page inscription  : Goldman 5 min 
+Creer les controller pour login : Flo 10 min 
+Creer les controller pour inscription : Flo 10 min 
+ajout dans route pour login et inscription pour utiliser les controller : 2 min 
