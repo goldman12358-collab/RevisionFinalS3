@@ -79,4 +79,4 @@ creer une page login : Goldman 5 min
 creer une page inscription  : Goldman 5 min 
 Creer les controller pour login : Flo 10 min 
 Creer les controller pour inscription : Flo 10 min 
-ajout dans route pour login et inscription pour utiliser les controller : 2 min 
+ajout dans route pour login et inscription pour utiliser les controller : Goldman 2 min 
